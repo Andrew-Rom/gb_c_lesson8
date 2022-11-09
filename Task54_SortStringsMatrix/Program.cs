@@ -75,12 +75,14 @@ void Swap(ref int leftItem, ref int rightItem)
     rightItem = temp;
 }
 
+// Размер генерируемого массива
 int quantityRows = 5;
 int quantityCols = 9;
 
 int[,] randomMatrix = CreateMatrix(quantityRows, quantityCols);
 PrintMatrix(randomMatrix);
 Console.WriteLine();
+
 int[,] sortedRandomMatrix = new int[quantityRows, quantityCols];
 for (int i = 0; i < randomMatrix.GetLength(0); i++)
 {
