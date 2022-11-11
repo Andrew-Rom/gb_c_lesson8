@@ -12,19 +12,15 @@ int[,,] CreateCube(int row, int col, int depth)
 {
     int[,,] cube = new int[row, col, depth];
     Random rnd = new Random();
-    int cubeValue = cube[0, 0, 0];
+    int cubeValue = rnd.Next(10, 20);
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
         {
             for (int k = 0; k < depth; k++)
             {
-                cube[i, j, k] = rnd.Next(10, 100);
-                while (cube[i, j, k] == cubeValue)
-                {
-                    cube[i, j, k] = rnd.Next(10, 100);
-                }
-                cubeValue = cube[i, j, k];
+                cubeValue = cubeValue + rnd.Next(5, 10) - rnd.Next(1, 5);
+                cube[i, j, k] = cubeValue;
             }
         }
     }
